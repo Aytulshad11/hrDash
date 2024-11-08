@@ -6,39 +6,31 @@ import cn from "./Utils"
 import DashboardSection from "./DashboardSec"
 import UpcomingSchedule from "./Schedule"
 import Header from "./Header"
-import SideBar from "./SideBar"
+
 import ActivityCard from "./Activity"
-// Utility function for className concatenation
-// const cn = (...classes) => classes.filter(Boolean).join(' ')
 
 
-
-// UpcomingSchedule Component
-
-
-// Main Dashboard Component
 export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
+      
       <Header />
 
       <div className="flex">
-        {/* Sidebar */}
-        <SideBar/>
-
-        {/* Main Content */}
+        
+       
+       
         <main className="flex-1 p-4 md:ml-64">
-          <div className="container space-y-8">
+          <div className="container space-y-8 text-left" >
             <h1 className="text-2xl font-bold">Dashboard</h1>
 
-            {/* Main content grid */}
+          
             <div className="grid gap-4 md:grid-cols-3">
-              {/* Left column: Stats and Announcement */}
+              
               <div className="md:col-span-2 space-y-4">
-                {/* Stats Grid */}
+              
                 <div className="grid gap-4 md:grid-cols-3">
                   <StatsCard
                     title="Available Position"
@@ -60,7 +52,7 @@ export default function Dashboard() {
                   />
                 </div>
 
-                {/* Larger Stats */}
+                
                 <div className="grid gap-4 md:grid-cols-2">
                   <StatsCard
                     title="Total Employees"
@@ -88,7 +80,7 @@ export default function Dashboard() {
                   />
                 </div>
 
-                {/* Announcement Section */}
+             
                 <DashboardSection
                   title="Announcement"
                   date="Today, 13 Sep 2021"
@@ -110,12 +102,13 @@ export default function Dashboard() {
                 />
               </div>
 
-              {/* Right column: Recent Activity and Upcoming Schedule */}
+            
               <div className="">
                 <div><ActivityCard
                 /> </div>
                 <br />
-                <UpcomingSchedule
+                <DashboardSection
+                  title="Upcoming Schedule"
                   date="Today, 13 Sep 2021"
                   items={[
                     {
@@ -131,6 +124,7 @@ export default function Dashboard() {
                       time: "Today - 09:15 AM"
                     }
                   ]}
+                  actionLabel="Create a new Schedule"
                 />
               </div>
             </div>
