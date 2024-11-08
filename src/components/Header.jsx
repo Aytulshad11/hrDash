@@ -17,7 +17,7 @@ export default function Header(){
         </button>
         <div className="flex w-full items-center gap-4 md:gap-8">
             <span className="hidden font-bold md:inline-block text-white">
-            <p>Vasitum EnterPrises.</p>
+            <p>Vasitum EnterPrises....................</p>
             </span>
             <div className="flex-1">
             <div className="relative">
